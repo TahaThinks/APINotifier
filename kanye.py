@@ -6,6 +6,9 @@ def get_quote():
     response = requests.get(url=kanye_api)
     response.raise_for_status()
     kanye_quote = response.json()["quote"]
+    canvas.itemconfig(quote_text, text=kanye_quote)
+
+
 
 
 window = Tk()

@@ -24,10 +24,12 @@ response.raise_for_status()
 # Get the Data
 data = response.json()["results"]
 
-sunrise = data["sunrise"]
-sunset = data["sunset"]
+sunrise = data["sunrise"].split("T")[1].split(":")[0]
+sunset = data["sunset"].split("T")[1].split(":")[0]
 
-print(f"sunrise: {sunrise}\nsunset: {sunset}")
+print(sunrise)
+print(sunset)
+
 
 time_now = datetime.now()
-print(time_now)
+print(time_now.hour)
